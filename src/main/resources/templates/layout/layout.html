@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
+    <link rel="stylesheet"
+          th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css}"/>
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script>
+        var METRIXIR = METRIXIR || {};
+
+        METRIXIR.server = Object.assign({host: 'localhost:3001'}, METRIXIR.server);
+    </script>
+
+    <title layout:title-pattern="$CONTENT_TITLE | $DECORATOR_TITLE">TISCON</title>
+</head>
+<body>
+<div layout:replace="layout/header::header"></div>
+
+<div class="pusher">
+    <div layout:fragment="content"></div>
+</div>
+
+<div layout:replace="layout/footer::footer"></div>
+</body>
+</html>
