@@ -38,59 +38,13 @@ T社は技術コンペに参加することにしました。
 ## 環境構築
 
 下記リンクtiscon3-startup-guide内のREADMEを参考に、環境構築をしてください。
-[【tiscon3-startup-guide】](https://github.com/tiscon/tiscon3-startup-guide)
+- [tiscon3-startup-guide](https://github.com/tiscon/tiscon3-startup-guide)
 
-# 参考
-## 本プロジェクトの構成
+## 参考
 
-```
+Webアプリケーションの処理の流れや構成しているプログラムの概要を知りたい方は、以下を参考にしてください。
+- [Webアプリケーションの概要 ～TISCONのプログラムを確認しよう～](https://github.com/tiscon/tiscon3-startup-guide/content/web-overview.md)
 
-tiscon3
-
-└ src
-
- └ main
-
-    ├ java
-
-    │├ db.migration             #DBスキーマ、事前登録データの定義情報
-
-    │└ jp.co.tis.tiscon3
-
-    │  ├ component.thymeleaf    #システムで利用する拡張コンポーネント
-
-    │  ├ configuration
-
-    │  │  ├ ApplicationConfiguration.java     #ルート定義とmiddleware定義
-
-    │  │  ├ DatabaseConfiguration.java        #データベースを利用するための定義
-
-    │  │  └ SystemConfiguration.java          #システムが利用するコンポーネントの定義
-
-    │  ├ controller             #リクエスト内容がURLマッチした時に実行されるコントローラー
-
-    │  ├ dao                    #DBアクセス
-
-    │  ├ entity                 #DBから取得した情報を保持する
-
-    │  ├ form                   #画面からリクエストされた内容を保持する
-
-    │  └ Application.java       #アプリケーションエントリーポイント
-
-    └ resources
-
-        ├ META-INF
-
-        │ └ jp.co.tis.tiscon3.dao      #Daoに対応するSQLファイル
-
-        ├ public                       #アプリケーションが公開する静的リソース
-
-        └ template                     #画面表示する内容
-
-```
-
-
----
 ## 使用技術
 ### Enkan
 本アプリケーションはマイクロフレームワーク『Enkan』を使用して構築されています。
