@@ -43,7 +43,7 @@ T社は技術コンペに参加することにしました。
 ## 参考
 
 Webアプリケーションの処理の流れや構成しているプログラムの概要を知りたい方は、以下を参考にしてください。
-- [Webアプリケーションの概要 ～TISCONのプログラムを確認しよう～](https://github.com/tiscon/tiscon3-startup-guide/content/web-overview.md)
+- [Webアプリケーションの概要 ～TISCONのプログラムを確認しよう～](https://github.com/tiscon/tiscon3-startup-guide/blob/master/content/web-overview.md)
 
 ## 使用技術
 ### Enkan
