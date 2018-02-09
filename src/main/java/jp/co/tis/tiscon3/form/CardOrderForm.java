@@ -23,19 +23,42 @@ public class CardOrderForm extends FormBase {
     @Pattern(regexp = "^[a-zA-Z 　]*$")
     private String alphabetName;
 
+    //** 生年月日 **//
+    //@NotBlank
+    //@Size(max = 10)
+    //@Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
+    //private String dateOfBirth;
     @NotBlank
     @Size(max = 10)
-    @Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
-    private String dateOfBirth;
+    @Pattern(regexp = "\\d{4}$")
+    private String yearOfBirth;
+
+    //** 生年月日 分割した（DBどうなる？） **//
+    @NotBlank
+    @Size(max = 10)
+    @Pattern(regexp = "\\d{1,2}$")
+    private String monthOfBirth;
+
+    @NotBlank
+    @Size(max = 10)
+    @Pattern(regexp = "\\d{1,2}$")
+    private String dayOfBirth;
+    //** 生年月日 **//
 
     @NotBlank
     @Size(max = 6)
     private String gender;
 
+    //郵便番号変更
     @NotBlank
     @Size(max = 8)
-    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
+    @Pattern(regexp = "^[0-9]{7}$")
     private String zipCode;
+
+    //@NotBlank
+    //@Size(max = 8)
+    //@Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
+    //private String zipCode;
 
     @NotBlank
     @Size(max = 255)
