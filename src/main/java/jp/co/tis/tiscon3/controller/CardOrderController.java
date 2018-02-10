@@ -58,17 +58,17 @@ public class CardOrderController {
      */
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
-        form.setErrors(null);
+        //form.setErrors(null);
 
         //入力内容が不十分であれば，user登録ページに戻る
-        //if (form.hasErrors()) {
+        if (form.hasErrors()) {
 
-          //  return templateEngine.render("cardOrder/user", "form", form);
-        //}
+            return templateEngine.render("cardOrder/user", "form", form);
+        }
         //入力内容に問題がなければ進む
-        //else{
+        else{
            return templateEngine.render("cardOrder/job", "form", form);
-        //}
+        }
 
     }
 

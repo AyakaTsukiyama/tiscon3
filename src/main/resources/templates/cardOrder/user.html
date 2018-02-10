@@ -36,7 +36,7 @@
                                 <!-- 必須ラベル挿入 -->
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                    <label>お名前（漢字）</label>
+                                    <label>お名前（全角漢字）</label>
                                 </div>
                                 <input type="text" name="kanjiName" placeholder="山田　太郎" th:value="${form.kanjiName}" required/>
                                 <!-- エラー表示 -->
@@ -68,14 +68,14 @@
                                 <!-- 必須ラベル挿入 -->
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                    <label>名前（カナ）</label>
+                                    <label>名前（全角カナ）</label>
                                 </div>
                                 <input type="text" name="kanaName" placeholder="ヤマダ　タロウ" th:value="${form.kanaName}"/>
                                 <!-- エラー表示 -->
                                 <span class="error_msg" th:if="${form.hasErrors('kanaName')}" th:errors="*{kanaName}">
                                     <div class="ui pointing red basic label">
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">お名前（カナ）を入力してください．</font>
+                                            <font style="vertical-align: inherit;">お名前（全角カナ）を入力してください．</font>
                                         </font>
                                     </div>
                                 </span>
@@ -86,7 +86,7 @@
                                 <!-- 必須ラベル挿入 -->
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                    <label>お名前（ローマ字）</label>
+                                    <label>お名前（半角ローマ字）</label>
                                 </div>
 
                                 <input type="text" name="alphabetName" placeholder="YAMADA　TAROU" th:value="${form.alphabetName}"/>
@@ -230,17 +230,18 @@
 
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
-                                    <!-- 必須ラベル挿入 -->
-                                    <div class="inline fields">
-                                        <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                        <label>自宅電話番号</label>
-                                    </div>
-                                    <input type="text" name="homePhoneNumber" placeholder="000-000-0000" th:value="${form.homePhoneNumber}"/>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                     <!-- 任意ラベル挿入 -->
                                     <div class="inline fields">
                                         <a class="ui tiny label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任意</font></font></a>
+                                        <label>自宅電話番号</label>
+                                    </div>
+
+                                    <input type="text" name="homePhoneNumber" placeholder="090-0000-0000" th:value="${form.homePhoneNumber}"/>
+                                </div>
+                                <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
+                                    <!-- 必須ラベル挿入 -->
+                                    <div class="inline fields">
+                                        <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                         <label>携帯電話番号</label>
                                     </div>
                                     <input type="text" name="mobilePhoneNumber" placeholder="000-000-0000" th:value="${form.mobilePhoneNumber}"/>
@@ -270,7 +271,7 @@
                                         <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                         <label>お住まい</label>
                                     </div>
-                                    <!-- セレクトボックスはどう？ -->
+                                    <!-- セレクトボックス -->
                                     <div class="field">
                                         <select class="ui fluid search dropdown" name="houseClassification" th:value="${form.houseClassification}">
                                             <option th:value="${form.houseClassification}" th:selected="${form.houseClassification == form.houseClassification}" th:inline="text">[[${form.houseClassification}]]</option>
@@ -316,33 +317,52 @@
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                         <label>ご職業</label>
-                                        <input type="radio" name="job" value="経営自営" th:checked="${form.job}=='経営自営'"/>経営・自営業
-                                        <input type="radio" name="job" value="会社員" th:checked="${form.job}=='会社員'"/>会社員
-                                        <input type="radio" name="job" value="契約派遣" th:checked="${form.job}=='契約派遣'"/>契約・派遣社員
-                                        <input type="radio" name="job" value="公務員" th:checked="${form.job}=='公務員'"/>公務員
-                                        <input type="radio" name="job" value="民間団体" th:checked="${form.job}=='民間団体'"/>民間団体
-                                        <input type="radio" name="job" value="主婦" th:checked="${form.job}=='主婦'"/>主婦
-                                        <input type="radio" name="job" value="学生" th:checked="${form.job}=='学生'"/>学生
-                                        <input type="radio" name="job" value="年金受給" th:checked="${form.job}=='年金受給'"/>年金受給者の方
-                                        <input type="radio" name="job" value="パートアルバイト" th:checked="${form.job}=='パートアルバイト'"/>パート・アルバイト
-                                        <input type="radio" name="job" value="他有職" th:checked="${form.job}=='他有職'"/>その他 (有職）
-                                        <input type="radio" name="job" value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）
-                                    </div>
+                                        <!-- セレクトボックス -->
+                                        <div class="field">
+                                            <select class="ui fluid search dropdown" name="job" th:value="${form.job}">
+                                                <option th:value="${form.job}" th:selected="${form.job == form.job}" th:inline="text">[[${form.job}]]</option>
+                                                <option value="経営自営" >経営・自営業</option>
+                                                <option value="会社員" >会社員</option>
+                                                <option value="契約派遣" >契約・派遣社員</option>
+                                                <option value="公務員" >公務員</option>
+                                                <option value="民間団体" >民間団体</option>
+                                                <option value="主婦" >主婦</option>
+                                                <option value="学生" >学生</option>
+                                                <option value="年金受給" >年金受給者の方</option>
+                                                <option value="パートアルバイト" >パート・アルバイト</option>
+                                                <option value="他有職" >その他 (有職）</option>
+                                                <option value="他無職" >その他（無職）</option>
+
+                                                <!--
+
+                                                <input type="radio" name="job" value="経営自営" th:checked="${form.job}=='経営自営'"/>経営・自営業
+                                                <input type="radio" name="job" value="会社員" th:checked="${form.job}=='会社員'"/>会社員
+                                                <input type="radio" name="job" value="契約派遣" th:checked="${form.job}=='契約派遣'"/>契約・派遣社員
+                                                <input type="radio" name="job" value="公務員" th:checked="${form.job}=='公務員'"/>公務員
+                                                <input type="radio" name="job" value="民間団体" th:checked="${form.job}=='民間団体'"/>民間団体
+                                                <input type="radio" name="job" value="主婦" th:checked="${form.job}=='主婦'"/>主婦
+                                                <input type="radio" name="job" value="学生" th:checked="${form.job}=='学生'"/>学生
+                                                <input type="radio" name="job" value="年金受給" th:checked="${form.job}=='年金受給'"/>年金受給者の方
+                                                <input type="radio" name="job" value="パートアルバイト" th:checked="${form.job}=='パートアルバイト'"/>パート・アルバイト
+                                                <input type="radio" name="job" value="他有職" th:checked="${form.job}=='他有職'"/>その他 (有職）
+                                                <input type="radio" name="job" value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）
+                                                -->
+                                        </div>
 
 
-                                    <!--/*"お勤め先"の入力値を引き回すための隠し項目*/-->
-                                    <input type="hidden" name="employerName" th:value="${form.employerName}"/>
-                                    <input type="hidden" name="employerZipCode" th:value="${form.employerZipCode}"/>
-                                    <input type="hidden" name="employerAddress" th:value="${form.employerAddress}"/>
-                                    <input type="hidden" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
-                                    <input type="hidden" name="industryType" th:value="${form.industryType}"/>
-                                    <input type="hidden" name="capital" th:value="${form.capital}"/>
-                                    <input type="hidden" name="companySize" th:value="${form.companySize}"/>
-                                    <input type="hidden" name="department" th:value="${form.department}"/>
-                                    <input type="hidden" name="position" th:value="${form.position}"/>
-                                    <input type="hidden" name="employeeLength" th:value="${form.employeeLength}"/>
+                                        <!--/*"お勤め先"の入力値を引き回すための隠し項目*/-->
+                                        <input type="hidden" name="employerName" th:value="${form.employerName}"/>
+                                        <input type="hidden" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                                        <input type="hidden" name="employerAddress" th:value="${form.employerAddress}"/>
+                                        <input type="hidden" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
+                                        <input type="hidden" name="industryType" th:value="${form.industryType}"/>
+                                        <input type="hidden" name="capital" th:value="${form.capital}"/>
+                                        <input type="hidden" name="companySize" th:value="${form.companySize}"/>
+                                        <input type="hidden" name="department" th:value="${form.department}"/>
+                                        <input type="hidden" name="position" th:value="${form.position}"/>
+                                        <input type="hidden" name="employeeLength" th:value="${form.employeeLength}"/>
 
-                                    <button class="ui fluid teal button">次へ（お勤め先情報の入力）</button>
+                                        <button class="ui fluid teal button">次へ（お勤め先情報の入力）</button>
                         </form>
                     </div>
                 </div>
