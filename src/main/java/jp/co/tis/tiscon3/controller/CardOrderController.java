@@ -61,14 +61,15 @@ public class CardOrderController {
         form.setErrors(null);
 
         //入力内容が不十分であれば，user登録ページに戻る
-        if (form.hasErrors()) {
+        //if (form.hasErrors()) {
 
-            return templateEngine.render("cardOrder/user", "form", form);
-        }
+          //  return templateEngine.render("cardOrder/user", "form", form);
+        //}
         //入力内容に問題がなければ進む
-        else{
-            return templateEngine.render("cardOrder/job", "form", form);
-        }
+        //else{
+           return templateEngine.render("cardOrder/job", "form", form);
+        //}
+
     }
 
     /**
