@@ -234,6 +234,16 @@
                                     <div class="inline fields">
                                         <a class="ui tiny label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任意</font></font></a>
                                         <label>自宅電話番号</label>
+                                        <!-- エラー表示 -->
+                                        <span class="error_msg" th:if="${form.hasErrors('zipCode')}" th:errors="*{zipCode}">
+                                    <div class="ui pointing red basic label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">
+                                                 <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
+                                            </font>
+                                        </font>
+                                    </div>
+                                </span>
                                     </div>
 
                                     <input type="text" name="homePhoneNumber" placeholder="090-0000-0000" th:value="${form.homePhoneNumber}"/>

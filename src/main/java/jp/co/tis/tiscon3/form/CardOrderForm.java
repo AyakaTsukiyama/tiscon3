@@ -65,12 +65,12 @@ public class CardOrderForm extends FormBase {
     private String address;
 
     @Size(max = 13)
-    @Pattern(regexp = "^0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4}$")
+    @Pattern(regexp = "^(0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4})?$")
     private String homePhoneNumber;
 
     @NotBlank
     @Size(max = 13)
-    @Pattern(regexp = "^((070|080|090)-[0-9]{4}-[0-9]{4})?$")
+    @Pattern(regexp = "^(070|080|090)-[0-9]{4}-[0-9]{4}$")
     private String mobilePhoneNumber;
 
     @NotBlank
