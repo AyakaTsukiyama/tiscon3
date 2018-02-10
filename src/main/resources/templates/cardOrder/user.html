@@ -24,7 +24,7 @@
                             <!-- /*エラーがあれば表示する*/ -->
                             <ul class="ui red basic label" th:if="${form.hasErrors(kanjiName)}">
                                 入力内容に誤りがあります．
-                               <!-- <div th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}"></div> -->
+                                <!-- <div th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}"></div> -->
                                 <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
                             </ul>
 
@@ -210,12 +210,12 @@
                                     <!-- 必須ラベル挿入 -->
                                     <div class="inline fields">
                                         <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                        <label>ご住所</label>
+                                        <label>ご住所（番地・アパート名まで）</label>
                                     </div>
                                     <!-- <input type="text" name="address" th:value="${form.address}"/> -->
                                     <input type="text" name="address" size="40" th:value="${form.address}"/>
-
                                 </div>
+
                                 <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                     <!-- 任意ラベル挿入 -->
                                     <div class="inline fields">
@@ -229,7 +229,7 @@
                                     <!-- 必須ラベル挿入 -->
                                     <div class="inline fields">
                                         <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                        <label>携帯電話番号</label>
+                                        <label>携帯電話番号（ハイフンあり）</label>
                                     </div>
                                     <input type="text" name="mobilePhoneNumber" placeholder="0X0-000-0000" th:value="${form.mobilePhoneNumber}" pattern="^(070|080|090)-[0-9]{4}-[0-9]{4}$" required/>
                                     <!-- エラー表示
@@ -317,14 +317,14 @@
                                             <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                             <label>ローン等のお借り入れ金額</label>
                                         </div>
-                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" pattern="^[0-9]$" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                         <div class="inline fields">
                                             <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                             <label>昨年の所得</label>
                                         </div>
-                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" pattern="^[0-9]$" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                         <label>ご職業</label>
