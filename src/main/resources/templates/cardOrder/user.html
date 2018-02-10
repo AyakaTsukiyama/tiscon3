@@ -22,10 +22,10 @@
                         <form class="ui form" method="post" action="/cardOrder/user">
 
                             <!-- /*エラーがあれば表示する*/ -->
-                            <ul class="ui red basic label" th:if="${form.hasErrors()}">
-                                入力内容に誤りがあります
-                                <!-- <div th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}">お名前（漢字）を入力してください</div> -->
-                                <!-- <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li> -->
+                            <ul class="ui red basic label" th:if="${form.hasErrors(kanjiName)}">
+                                入力内容に誤りがあります．
+                               <!-- <div th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}"></div> -->
+                                <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
                             </ul>
 
                             <div class="ui horizontal divider">ご本人について</div>
@@ -39,7 +39,7 @@
                                     <label>お名前（全角漢字）</label>
                                 </div>
                                 <input type="text" name="kanjiName" placeholder="山田　太郎" th:value="${form.kanjiName}" required/>
-                                <!-- エラー表示 -->
+                                <!-- エラー表示
                                 <span class="error_msg" th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}">
                                     <div class="ui pointing red basic label">
                                         <font style="vertical-align: inherit;">
@@ -47,6 +47,7 @@
                                         </font>
                                     </div>
                                 </span>
+                                -->
 
                                 <!-- 姓名分けるパターン
                                <div class="inline fields">
@@ -70,15 +71,8 @@
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                     <label>名前（全角カナ）</label>
                                 </div>
-                                <input type="text" name="kanaName" placeholder="ヤマダ　タロウ" th:value="${form.kanaName}"/>
-                                <!-- エラー表示 -->
-                                <span class="error_msg" th:if="${form.hasErrors('kanaName')}" th:errors="*{kanaName}">
-                                    <div class="ui pointing red basic label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">お名前（全角カナ）を入力してください．</font>
-                                        </font>
-                                    </div>
-                                </span>
+                                <input type="text" name="kanaName" placeholder="ヤマダ　タロウ" th:value="${form.kanaName}" pattern="^[ァ-ヶー 　]*$" required/>
+
 
                                 <!-- <span class="error_msg" th:if="${form.hasErrors('kanaName')}" th:errors="*{kanaName}">error!</span> -->
                             </div>
@@ -86,17 +80,10 @@
                                 <!-- 必須ラベル挿入 -->
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
-                                    <label>お名前（半角ローマ字）</label>
+                                    <label>お名前（半角ローマ字大文字）</label>
                                 </div>
 
-                                <input type="text" name="alphabetName" placeholder="YAMADA　TAROU" th:value="${form.alphabetName}"/>
-                                <span class="error_msg" th:if="${form.hasErrors('alphabetName')}" th:errors="*{alphabetName}">
-                                    <div class="ui pointing red basic label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">お名前（ローマ字）を入力してください．</font>
-                                        </font>
-                                    </div>
-                                </span>
+                                <input type="text" name="alphabetName" placeholder="YAMADA TAROU"  th:value="${form.alphabetName}" pattern="^[A-Z 　]*$" required/>
                             </div>
 
                             <!-- 性別 -->
@@ -234,16 +221,6 @@
                                     <div class="inline fields">
                                         <a class="ui tiny label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任意</font></font></a>
                                         <label>自宅電話番号</label>
-                                        <!-- エラー表示 -->
-                                        <span class="error_msg" th:if="${form.hasErrors('zipCode')}" th:errors="*{zipCode}">
-                                    <div class="ui pointing red basic label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">
-                                                 <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
-                                            </font>
-                                        </font>
-                                    </div>
-                                </span>
                                     </div>
 
                                     <input type="text" name="homePhoneNumber" placeholder="090-0000-0000" th:value="${form.homePhoneNumber}"/>
@@ -255,6 +232,15 @@
                                         <label>携帯電話番号</label>
                                     </div>
                                     <input type="text" name="mobilePhoneNumber" placeholder="000-000-0000" th:value="${form.mobilePhoneNumber}"/>
+                                    <!-- エラー表示 -->
+                                    <span class="error_msg" th:if="${form.hasErrors('mobilePhoneNumber')}" th:errors="*{mobilePhoneNumber}">
+                                    <div class="ui pointing red basic label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">携帯電話番号を入力してください．
+                                            </font>
+                                        </font>
+                                    </div>
+                                </span>
                                 </div>
 
 

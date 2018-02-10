@@ -20,9 +20,18 @@ public class CardOrder {
     @Column(name = "ID")
     Long id;
 
+
     /**  */
+    //@Column(name = "KANJI_NAME")
+    //String kanjiName;
+
+    //名前分割
     @Column(name = "KANJI_NAME")
-    String kanjiName;
+    String kanjiLastName;
+
+    @Column(name = "KANJI_NAME")
+    String kanjiFirstName;
+
 
     /**  */
     @Column(name = "KANA_NAME")
@@ -32,9 +41,24 @@ public class CardOrder {
     @Column(name = "ALPHABET_NAME")
     String alphabetName;
 
+
     /**  */
-    @Column(name = "DATE_OF_BIRTH")
-    String dateOfBirth;
+    //@Column(name = "DATE_OF_BIRTH")
+    //String dateOfBirth;
+
+    //** 生年月日 分割した**//
+
+    /**  */
+    @Column(name = "YEAR_OF_BIRTH")
+    String yearOfBirth;
+
+    /**  */
+    @Column(name = "MONTH_OF_BIRTH")
+    String monthOfBirth;
+
+    /**  */
+    @Column(name = "DAY_OF_BIRTH")
+    String dayOfBirth;
 
     /**  */
     @Column(name = "GENDER")
@@ -138,23 +162,64 @@ public class CardOrder {
         this.id = id;
     }
 
+
+    //名前姓分割
     /**
      * Returns the kanjiName.
      *
      * @return the kanjiName
      */
-    public String getKanjiName() {
-        return kanjiName;
-    }
+    // public String getKanjiName() {
+    //   return kanjiName;
+    //}
 
     /**
      * Sets the kanjiName.
      *
      * @param kanjiName the kanjiName
      */
-    public void setKanjiName(String kanjiName) {
-        this.kanjiName = kanjiName;
+    //public void setkanjiName(String kanjiName) {
+      //  this.kanjiName = kanjiName;
+    //}
+
+    /**
+     * Returns the kanjiFirstName.
+     *
+     * @return the kanjiFirstName
+     */
+    public String getkanjiLastName() {
+        return kanjiLastName;
     }
+
+    /**
+     * Sets the kanjiLastName.
+     *
+     * @param kanjiLastName the kanjiLastName
+     */
+    public void setkanjiLastName(String kanjiLastName) {
+        this.kanjiLastName = kanjiLastName;
+    }
+
+    /**
+     * Returns the kanjiFirstName.
+     *
+     * @return the kanjiFirstName
+     */
+    public String getkanjiFirstName() {
+        return kanjiFirstName;
+    }
+
+    /**
+     * Sets the kanjiFirstName.
+     *
+     * @param kanjiFirstName the kanjiFirstName
+     */
+    public void setkanjiFirstName(String kanjiFirstName) {
+        this.kanjiFirstName = kanjiFirstName;
+    }
+
+
+
 
     /**
      * Returns the kanaName.
@@ -197,18 +262,72 @@ public class CardOrder {
      *
      * @return the dateOfBirth
      */
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
+    //public String getDateOfBirth() {
+    //  return dateOfBirth;
+    //}
+
 
     /**
      * Sets the dateOfBirth.
      *
      * @param dateOfBirth the dateOfBirth
      */
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    //public void setDateOfBirth(String dateOfBirth) {
+    //  this.dateOfBirth = dateOfBirth;
+    //}
+
+    //誕生日分割した
+    /**
+     * Returns the yearOfBirth.
+     *
+     * @return the yearOfBirth
+     */
+    public String getYearOfBirth() {
+        return yearOfBirth;
     }
+    /**
+     * Sets the yearOfBirth.
+     *
+     * @param dateOfBirth the yearOfBirth
+     */
+    public void setDateOfBirth(String dateOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    /**
+     * Returns the monthOfBirth.
+     *
+     * @return the monthOfBirth
+     */
+    public String getMonthOfBirth() {
+        return monthOfBirth;
+    }
+    /**
+     * Sets the monthOfBirth.
+     *
+     * @param monthOfBirth the monthOfBirth
+     */
+    public void setMonthOfBirth(String monthOfBirth) {
+        this.monthOfBirth = monthOfBirth;
+    }
+
+    /**
+     * Returns the dayOfBirth.
+     *
+     * @return the dayOfBirth
+     */
+    public String getDayOfBirth() {
+        return dayOfBirth;
+    }
+    /**
+     * Sets the dayOfBirth.
+     *
+     * @param dayOfBirth the dayOfBirth
+     */
+    public void setDayOfBirth(String dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
+    }
+
 
     /**
      * Returns the gender.

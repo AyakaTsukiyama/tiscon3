@@ -67,7 +67,22 @@ public class CardOrderController {
         }
         //入力内容に問題がなければ進む
         else{
-           return templateEngine.render("cardOrder/job", "form", form);
+            if(form.job.equals("経営自営")) {
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else if(form.job.equals("会社員")){
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else if(form.job.equals("契約派遣")){
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else if(form.job.equals("公務員")){
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else if(form.job.equals("民間団体")){
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else if(form.job.equals("他有職")){
+                return templateEngine.render("cardOrder/job", "form", form);
+            }else{
+                return redirect(getClass(), "completed", SEE_OTHER);
+
+            }
         }
 
     }
