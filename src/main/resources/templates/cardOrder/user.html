@@ -184,7 +184,7 @@
                                         <div class="inline fields">
                                             <select class="ui fluid search dropdown" name="dayOfBirth">
                                                 <option th:each="form.dayOfBirth : ${form.dayOfBirth}" th:value="${form.dayOfBirth}" th:selected="${form.dayOfBirth == dayOfBirth}" th:inline="text">[[${form.dayOfBirth}]]</option>
-                                                <option th:each="i:${#numbers.sequence(1,12)}" th:value="${i}" th:text="${i}"></option>
+                                                <option th:each="i:${#numbers.sequence(1,31)}" th:value="${i}" th:text="${i}"></option>
                                             </select>
                                             <label>日</label>
                                         </div>
@@ -328,7 +328,7 @@
                                         <input type="radio" name="job" value="他有職" th:checked="${form.job}=='他有職'"/>その他 (有職）
                                         <input type="radio" name="job" value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）
                                     </div>
-                                    
+
 
                                     <!--/*"お勤め先"の入力値を引き回すための隠し項目*/-->
                                     <input type="hidden" name="employerName" th:value="${form.employerName}"/>
