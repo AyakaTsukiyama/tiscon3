@@ -38,7 +38,7 @@
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                     <label>お名前（漢字）</label>
                                 </div>
-                                <input type="text" name="kanjiName" placeholder="山田 太郎" th:value="${form.kanjiName}" />
+                                <input type="text" name="kanjiName" placeholder="山田　太郎" th:value="${form.kanjiName}" required/>
                                 <!-- エラー表示 -->
                                 <span class="error_msg" th:if="${form.hasErrors('kanjiName')}" th:errors="*{kanjiName}">
                                     <div class="ui pointing red basic label">
@@ -70,7 +70,7 @@
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                     <label>名前（カナ）</label>
                                 </div>
-                                <input type="text" name="kanaName" placeholder="ヤマダ タロウ" th:value="${form.kanaName}"/>
+                                <input type="text" name="kanaName" placeholder="ヤマダ　タロウ" th:value="${form.kanaName}"/>
                                 <!-- エラー表示 -->
                                 <span class="error_msg" th:if="${form.hasErrors('kanaName')}" th:errors="*{kanaName}">
                                     <div class="ui pointing red basic label">
@@ -89,7 +89,7 @@
                                     <label>お名前（ローマ字）</label>
                                 </div>
 
-                                <input type="text" name="alphabetName" placeholder="YAMADA TAROU" th:value="${form.alphabetName}"/>
+                                <input type="text" name="alphabetName" placeholder="YAMADA　TAROU" th:value="${form.alphabetName}"/>
                                 <span class="error_msg" th:if="${form.hasErrors('alphabetName')}" th:errors="*{alphabetName}">
                                     <div class="ui pointing red basic label">
                                         <font style="vertical-align: inherit;">
