@@ -255,9 +255,19 @@
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
-                                    <label>配偶者有無</label>
+                                    <div class="inline fields">
+                                        <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
+                                        <label>配偶者有無</label>
+                                    </div>
                                     <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
                                     <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
+                                    <span class="error_msg" th:if="${form.hasErrors('gender')}" th:errors="*{gender}">
+                                                <div class="ui left pointing red basic label">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">性別を選択してください</font>
+                                                    </font>
+                                                </div>
+                                            </span>
                                 </div>
 
                                 <!-- お住まい -->
@@ -302,7 +312,7 @@
                                             <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                             <label>ローン等のお借り入れ金額</label>
                                         </div>
-                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                         <div class="inline fields">
@@ -310,7 +320,7 @@
                                             <label>昨年の所得</label>
                                         </div>
 
-                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                         <label>ご職業</label>
@@ -320,7 +330,7 @@
                                                 <option th:value="${form.job}" th:selected="${form.job == form.job}" th:inline="text">[[${form.job}]]</option>
                                                 <option value="経営自営" >経営・自営業</option>
                                                 <option value="会社員" >会社員</option>
-                                                <option value="契約派遣" >契約・派遣社員</option>
+                                                <option valu=e"契約派遣" >契約・派遣社員</option>
                                                 <option value="公務員" >公務員</option>
                                                 <option value="民間団体" >民間団体</option>
                                                 <option value="主婦" >主婦</option>
