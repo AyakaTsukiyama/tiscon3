@@ -255,7 +255,10 @@
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
-                                    <label>配偶者有無</label>
+                                    <div class="inline fields">
+                                        <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
+                                        <label>配偶者有無</label>
+                                    </div>
                                     <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
                                     <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
                                     <span class="error_msg" th:if="${form.hasErrors('gender')}" th:errors="*{gender}">
@@ -309,7 +312,7 @@
                                             <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                             <label>ローン等のお借り入れ金額</label>
                                         </div>
-                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="debt" th:value="${form.debt}" placeholder="0" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                         <div class="inline fields">
@@ -317,7 +320,7 @@
                                             <label>昨年の所得</label>
                                         </div>
 
-                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" pattern="[0-9]*" required/><span class="unit">万円</span>
+                                        <input type="text" class="number" name="income" th:value="${form.income}" placeholder="0" required/><span class="unit">万円</span>
                                     </div>
                                     <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                         <label>ご職業</label>
