@@ -64,8 +64,8 @@
                                </div>
                                -->
 
-                            </div>
-                            <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
+                            </div>kanaName
+                            <div class="field" th:classappend="${form.hasErrors('')} ? 'error'">
                                 <!-- 必須ラベル挿入 -->
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
@@ -355,6 +355,7 @@
                                                 <input type="radio" name="job" value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）
                                                 -->
                                         </div>
+                                    </div>
 
 
                                         <!--/*"お勤め先"の入力値を引き回すための隠し項目*/-->
