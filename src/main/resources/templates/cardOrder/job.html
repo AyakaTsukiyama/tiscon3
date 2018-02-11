@@ -114,22 +114,23 @@
                             <input type="hidden" name="income" th:value="${form.income}"/>
                             <input type="hidden" name="job" th:value="${form.job}"/>
 
-                           <!-- <div class="ui column grid">
+                            <div class="ui column grid">
                                 <div class="eight wide column left aligned">
-                                    <!--/*戻る場合、formの送り先を強制的に書き換える*/
-                                    <button class="ui button angle left icon" onclick="form.action='/cardOrder/modify';return true">戻る</button>
+                                    <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
+                                    <!--<button class="ui button angle left icon" onclick="form.action='/cardOrder/modify';return true">戻る</button>-->
                                 </div>
-                                <div class="eight wide column right aligned">
-                                    <button class="ui teal button angle right icon">カードを申し込む</button>
-                                </div>
-                            </div>-->
-                        </form>
-                        <div>
-                            <a href="/cardOrder/user" class="ui primary button">
-                                カードの新規入会申込み
-                            </a>
+                                <div>
+                                    <a href="/cardOrder/completed" class="ui primary button">
+                                        カードの新規入会申込み
+                                    </a>
 
-                        </div>
+                                </div>
+
+                                <!--<div class="eight wide column right aligned">
+                                    <button class="ui teal button angle right icon">カードを申し込む</button>
+                                </div>-->
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
