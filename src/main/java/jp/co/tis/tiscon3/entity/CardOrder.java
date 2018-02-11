@@ -22,15 +22,15 @@ public class CardOrder {
 
 
     /**  */
-    //@Column(name = "KANJI_NAME")
-    //String kanjiName;
-
-    //名前分割
     @Column(name = "KANJI_NAME")
-    String kanjiLastName;
-
-    @Column(name = "KANJI_NAME")
-    String kanjiFirstName;
+    String kanjiName;
+//
+//    //名前分割
+//    @Column(name = "KANJI_NAME")
+//    String kanjiLastName;
+//
+//    @Column(name = "KANJI_NAME")
+//    String kanjiFirstName;
 
 
     /**  */
@@ -169,55 +169,55 @@ public class CardOrder {
      *
      * @return the kanjiName
      */
-    // public String getKanjiName() {
-    //   return kanjiName;
-    //}
+     public String getKanjiName() {
+      return kanjiName;
+    }
 
     /**
      * Sets the kanjiName.
      *
      * @param kanjiName the kanjiName
      */
-    //public void setkanjiName(String kanjiName) {
-      //  this.kanjiName = kanjiName;
-    //}
-
-    /**
-     * Returns the kanjiFirstName.
-     *
-     * @return the kanjiFirstName
-     */
-    public String getkanjiLastName() {
-        return kanjiLastName;
+    public void setkanjiName(String kanjiName) {
+        this.kanjiName = kanjiName;
     }
-
-    /**
-     * Sets the kanjiLastName.
-     *
-     * @param kanjiLastName the kanjiLastName
-     */
-    public void setkanjiLastName(String kanjiLastName) {
-        this.kanjiLastName = kanjiLastName;
-    }
-
-    /**
-     * Returns the kanjiFirstName.
-     *
-     * @return the kanjiFirstName
-     */
-    public String getkanjiFirstName() {
-        return kanjiFirstName;
-    }
-
-    /**
-     * Sets the kanjiFirstName.
-     *
-     * @param kanjiFirstName the kanjiFirstName
-     */
-    public void setkanjiFirstName(String kanjiFirstName) {
-        this.kanjiFirstName = kanjiFirstName;
-    }
-
+//
+//    /**
+//     * Returns the kanjiFirstName.
+//     *
+//     * @return the kanjiFirstName
+//     */
+//    public String getkanjiLastName() {
+//        return kanjiLastName;
+//    }
+//
+//    /**
+//     * Sets the kanjiLastName.
+//     *
+//     * @param kanjiLastName the kanjiLastName
+//     */
+//    public void setkanjiLastName(String kanjiLastName) {
+//        this.kanjiLastName = kanjiLastName;
+//    }
+//
+//    /**
+//     * Returns the kanjiFirstName.
+//     *
+//     * @return the kanjiFirstName
+//     */
+//    public String getkanjiFirstName() {
+//        return kanjiFirstName;
+//    }
+//
+//    /**
+//     * Sets the kanjiFirstName.
+//     *
+//     * @param kanjiFirstName the kanjiFirstName
+//     */
+//    public void setkanjiFirstName(String kanjiFirstName) {
+//        this.kanjiFirstName = kanjiFirstName;
+//    }
+//
 
 
 
