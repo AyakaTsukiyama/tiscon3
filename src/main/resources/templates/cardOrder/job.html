@@ -69,7 +69,7 @@
                                 <input type="text" name="employerPhoneNumber" placeholder="000-000-0000" th:value="${form.employerPhoneNumber}" required/>
                             </div>
 
-                            <!--
+
 
                            <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                <label>業種</label>
@@ -83,15 +83,15 @@
                                <input type="radio" name="industryType" value="官公庁" th:checked="${form.industryType}=='官公庁'"/>官公庁
                                <input type="radio" name="industryType" value="サービス" th:checked="${form.industryType}=='サービス'"/>その他サービス業
                                <input type="radio" name="industryType" value="その他" th:checked="${form.industryType}=='その他'"/>その他・不明
-                           </div> -->
+                           </div>
 
-                            <!-- 業種 -->
+                            <!-- 業種
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
-                                <!-- 必須ラベル挿入 -->
+                                <!-- 必須ラベル挿入
                                 <div class="inline fields">
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                     <label>業種（選択してください）</label>
-                                    <!-- セレクトボックス -->
+                                    <!-- セレクトボックス
                                     <div class="field">
                                         <select class="ui fluid search dropdown" name="industryType" th:value="${form.industryType}">
                                             <option th:value="${form.industryType}" th:selected="${form.industryType == form.industryType}" th:inline="text">[[${form.industryType}]]</option>
@@ -116,6 +116,8 @@
                                         </font>
                                     </div>
                                 </span>
+
+                                -->
 
 
                                 <!-- <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
@@ -144,7 +146,8 @@
                                  </span>-->
 
 
-                               <!-- <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
+
+                               <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
                                     <label>資本金</label>
                                     <input type="radio" name="capital" th:field="${form.capital}" value="999" th:checked="${form.capital}=='999'"/>１千万円未満
                                     <input type="radio" name="capital" th:field="${form.capital}" value="4999" th:checked="${form.capital}=='4999'"/>１千万円以上５千万円未満
@@ -154,7 +157,7 @@
                                 </div>
 
 
-                                <!--
+
                                 <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                     <label>お勤め先の規模（従業員数）</label>
                                     <input type="radio" name="companySize" th:field="${form.companySize}" value="9" th:checked="${form.companySize}=='9'"/>１０名未満
@@ -164,16 +167,16 @@
                                     <input type="radio" name="companySize" th:field="${form.companySize}" value="499" th:checked="${form.companySize}=='499'"/>１００名以上５００名未満
                                     <input type="radio" name="companySize" th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'"/>５００名以上
                                 </div>
-                                -->
 
 
 
-                                <!-- お勤め先の規模（従業員数） -->
+
+                                <!-- お勤め先の規模（従業員数）
                                 <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                     <div class="inline fields">
                                         <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                         <label>お勤め先の規模（従業員数）（選択してください）</label>
-                                        <!-- セレクトボックス -->
+                                        <!-- セレクトボックス
                                         <div class="field">
                                             <select class="ui fluid search dropdown" name="capital" th:value="${form.capital}">
                                                 <option th:value="${form.capital}" th:selected="${form.capital == form.capital}" th:inline="text">[[${form.capital}]]</option>
@@ -194,6 +197,7 @@
                                         </font>
                                     </div>
                                 </span>
+                                -->
 
 
                                     <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
