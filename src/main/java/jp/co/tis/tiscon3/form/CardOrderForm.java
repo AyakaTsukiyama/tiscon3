@@ -27,21 +27,21 @@ public class CardOrderForm extends FormBase {
     //@NotBlank
     //@Size(max = 10)
     //@Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
-    //private String dateOfBirth;
-    @NotBlank
-    @Size(max = 10)
-    @Pattern(regexp = "\\d{4}$")
+    private String dateOfBirth;
+    //@NotBlank
+    //@Size(max = 10)
+    //@Pattern(regexp = "\\d{4}$")
     private String yearOfBirth;
 
     //** 生年月日 分割した（DBどうなる？） **//
-    @NotBlank
-    @Size(max = 10)
-    @Pattern(regexp = "\\d{1,2}$")
+    //@NotBlank
+    //@Size(max = 10)
+    //@Pattern(regexp = "\\d{1,2}$")
     private String monthOfBirth;
 
-    @NotBlank
-    @Size(max = 10)
-    @Pattern(regexp = "\\d{1,2}$")
+    //@NotBlank
+    //@Size(max = 10)
+    //@Pattern(regexp = "\\d{1,2}$")
     private String dayOfBirth;
     //** 生年月日 **//
 

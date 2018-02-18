@@ -49,20 +49,22 @@
                                 </span>
                                 -->
 
-                                <!-- 姓名分けるパターン
+                                <!--
                                <div class="inline fields">
                                    <div class="two fields">
                                        <div class="field">
                                            <label>姓</label>
-                                           <input type="text" name="kanjiLastName" placeholder="山田">
+                                           <input type="text" name="kanjiLastName" placeholder="山田" required>
                                        </div>
                                        <div class="field">
                                            <label>名</label>
-                                           <input type="text" name="kanjiFirstName" placeholder="太郎">
+                                           <input type="text" name="kanjiFirstName" placeholder="太郎" required>
                                        </div>
                                    </div>
+                                   <input type="hidden" name="kanjiName"  value="|${form.kanjiLastName} + ${form.kanjiFirstName}|" th:value="${form.kanjiName}"/>
                                </div>
                                -->
+
 
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('')} ? 'error'">
@@ -111,9 +113,9 @@
                                     <a class="ui teal label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必須</font></font></a>
                                     <label>生年月日</label>
                                 </div>
-                                <!-- <input type="text" name="dateOfBirth" placeholder="0000-00-00" th:value="${form.dateOfBirth}"/> -->
+                                <input type="date" name="dateOfBirth" placeholder="0000-00-00" th:value="${form.dateOfBirth}"/>
 
-                                <!-- セレクトボックス -->
+                                <!-- セレクトボックス
                                 <div class="inline fields">
                                     <div class="field" th:classappend="${form.hasErrors('yearOfBirth')} ? 'error'">
                                         <div class="inline fields">
@@ -157,7 +159,7 @@
                                     <option value="11">11月</option>
                                     <option value="12">12月</option>
                                 </select>
-                                -->
+
                                     <span class="error_msg" th:if="${form.hasErrors('monthOfBirth')}" th:errors="*{monthOfBirth}">
                                                 <div class="ui pointing red basic label">
                                                     <font style="vertical-align: inherit;">
@@ -185,6 +187,7 @@
                                                 </div>
                                             </span>
                                 </div>
+                                -->
 
                                 <!-- 郵便番号(3桁+4桁) -->
                                 <!-- 住所自動入力 -->
